@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-# Make vim the default editor.
-export EDITOR='vim';
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
+
+# Make vscode the default editor.
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export EDITOR='code';
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
@@ -31,4 +35,14 @@ export MANPAGER='less -X';
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
-export GPG_TTY=$(tty);
+# export GPG_TTY=$(tty);
+
+#adds the GOPATH env
+if [[ -d $HOME/go ]]; then
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$PATH
+fi
+
+# AWS
+export AWS_REGION="us-west-2"
+export AWS_SDK_LOAD_CONFIG="true"
