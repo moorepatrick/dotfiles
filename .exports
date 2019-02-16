@@ -43,6 +43,9 @@ if [[ -d $HOME/go ]]; then
     export PATH=$GOPATH/bin:$PATH
 fi
 
+# Enable Go Modules
+export GO111MODULE=on
+
 # AWS
 export AWS_REGION="us-west-2"
 export AWS_SDK_LOAD_CONFIG="true"
